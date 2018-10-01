@@ -2,13 +2,13 @@
 Draw Lines in QT
 
 # How to install
-* Download the Repository
+* Download the repository
 * Install [Geometry](https://github.com/KROIA/Geometry) 
 * Unzip it to your favorite DLL build destination
 ***
 ***
 # Change the buildpath
-* Go to Settings:
+* Go to settings:
 QT-Creator->Tools->Options->Build & Run
 and change the **Default build directory:** to
 `
