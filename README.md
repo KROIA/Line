@@ -12,7 +12,7 @@ Draw Lines in QT
 QT-Creator->Tools->Options->Build & Run
 and change the **Default build directory:** to
 `
-../%{JS: Util.asciify("build-%{CurrentBuild:Name}")}
+bin/%{JS: Util.asciify("build-%{CurrentBuild:Name}")}
 `
 If you already have these settings, you can skip the following step.
 * Save the settings, close the project and **delete** the **.user** file.
@@ -21,15 +21,17 @@ If you already have these settings, you can skip the following step.
 * Open the **.pro** file, select the MinGW compiler.
 * Edit the **.pro** file:
 ```c++
-incPath = C:\Users\AlexKrieg\Documents\QT\lib\Geometry
+username     = AlexKrieg
+QT_work_dir  = C:/Users/$$username/Documents/QT
+geometryPath = $$QT_work_dir/lib/Geometry
 
-INCLUDEPATH += $$incPath
+INCLUDEPATH += $$geometryPath
 
 SOURCES += \
-        line.cpp \
-        $$incPath/geometry.cpp
+        rect.cpp \
+        $$geometryPath/geometry.cpp
 ```
-Change the **incPath** to the destination where you installed the Geometry header file.
+Change the **username**, **QT_work_dir** and **geometryPath** to your personal settings.
 * Save the .pro file
 * Build it
 ***
